@@ -1,0 +1,153 @@
+html{
+    font-family: 'SF Pro Display', sans-serif;   
+    scroll-behavior: smooth;                                             
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+}
+
+/* border for debugging-------------------- */
+.debug{
+    border: 1px solid black;
+}
+
+.debug1{
+    border: 1px solid blue;
+}
+
+.debug2{
+    border: 1px solid red;
+}
+/* ---------------------------------------- */
+
+/* universal class */
+
+.text-primary{
+    color: #232340;
+}
+
+.text-secondary{
+    color: #5468E7;
+}
+
+.text-tertiary{
+    color: #C897E4;
+}
+
+.text-gray{
+    color: #606060
+}
+
+.text-white{
+    color: #fff;
+}
+
+
+.bg-primary{
+    background-color: #232340;
+}
+
+.bg-secondary{
+    background-color: #5468E7;
+}
+
+.bg-tertiary{
+    background-color: #C897E4;
+}
+
+.bg-white{
+    background-color: #fff;
+}
+
+.bg-gray{
+    background-color: #606060
+}
+
+.bg-transparent{
+    background-color: transparent
+}
+
+.border-gray{
+    border: #606060 solid 1px;
+}
+
+.text-10xl{
+    font-size: 180px;
+    line-height: 1;
+}
+
+.gradient-blue{
+    background-image: linear-gradient(#3A8FFF, #0837AE);
+}
+
+.active-link {
+    color: #5468E7;
+}
+
+.tab-nav.active{
+    color: white;
+
+    .nav-line{
+        opacity: 1;
+    }
+}
+
+.tab-content, .mtab-content{
+    display: none;
+}
+
+.nav-line{
+    opacity: 0;
+}
+
+.slide {
+    width: 200px;
+    height: auto;
+    flex: 1 0 100%;
+}
+
+.slides-container{
+    height: calc(100vh - 2rem);
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.card:hover{
+    background-color: #232340;
+
+    .img-card{
+        display: block;
+    }
+
+    .notif-card{
+        display: none;
+    }
+}
+
+footer i:hover, #credits a:hover{
+    color: #5468E7;
+}
+
+.on-top{
+    z-index: 9999;
+}
+
+select, i{
+    cursor: pointer;
+}
+
+#main {
+    transition: margin-left .5s;    
+}
+
+.text-placeholder{
+    color: #595976;
+}

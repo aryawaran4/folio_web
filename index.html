@@ -1,0 +1,834 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+  <link href="http://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">    
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>    
+    <nav class="flex items-center font-medium w-full px-12 py-6 text-lg z-30 fixed top-0 bg-white justify-between">
+        <div class="w-1/3 md:w-2/12 flex justify-center">
+            <img src="assets/logo/full-logo.svg" alt="logo">
+        </div>
+        <div class="nav-container z-50 md:w-8/12 md:flex justify-center hidden">
+            <div id="nav-menu" class="justify-start nav-menu flex flex-col md:flex md:flex-row items-center text-gray gap-12 text-base">
+                <a class="cursor-pointer" href="#about-section">About</a>
+                <a class="cursor-pointer" href="#works-section">Work</a>
+                <a class="cursor-pointer" href="#services-section">Services</a>
+                <a class="cursor-pointer" href="#jobs-section">Jobs</a> 
+            </div>
+        </div>
+        <div id="mySidebar" class="sidebar right-0 left-0 fixed w-full top-0 bottom-0 bg-primary hidden">
+            <div class="relative">
+                <img class="absolute top-0 right-0" src="assets/mobile/line-nav-mobile.svg" alt="line-nav-mobile"/>
+            </div>
+            <div class="flex justify-between items-center p-12">
+                <div class="w-1/3 md:w-2/12 flex justify-center">
+                    <img src="assets/logo/full-logo-white.svg" alt="logo">
+                </div>
+                <a class="material-icons text-white w-fit text-5xl z-50" onclick="closeNav()">close</a>
+            </div>
+            <div class="font-bold text-placeholder flex flex-col p-12 gap-12">
+                <a class="cursor-pointer text-4xl" href="#about-mobile-section" onclick="closeNav()">About</a>
+                <a class="cursor-pointer text-4xl" href="#works-mobile-section" onclick="closeNav()">Work</a>
+                <a class="cursor-pointer text-4xl" href="#services-mobile-section" onclick="closeNav()">Services</a>
+                <a class="cursor-pointer text-4xl" href="#jobs-mobile-section" onclick="closeNav()">Jobs</a> 
+            </div>
+            <div class="flex items-center gap-8 p-12">                
+                <i class="border p-3 text-white cursor-pointer fa rounded-full">&#xf230;</i>
+                <i class="border p-3 text-white cursor-pointer fa rounded-full">&#xf16a;</i>
+                <i class="border p-3 text-white cursor-pointer fa rounded-full">&#xf16d;</i>
+            </div>
+        </div>
+        <div class="hidden md:w-2/12 md:flex justify-center">
+            <button class="bg-primary rounded-md py-3 px-8 text-white">Contact Us</button>
+        </div>
+        <div id="main">
+            <div class="md:hidden cursor-pointer" onclick="openNav()">
+                <img src="assets/icon/burger-icon.svg" alt="burger-icon">
+            </div>
+        </div>
+    </nav>
+    <div class="hidden md:flex md:flex-col gap-32 mt-32">
+
+        <div id="landing-section" class="w-full">
+            <div class="px-32 py-8 flex">
+                <div class="font-medium flex flex-col gap-8 w-2/5 z-20">
+                    <p class="text-8xl font-bold">Stand Out from The Crowd</p>
+                    <p class="text-gray w-3/4">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                    <button class="w-fit bg-secondary rounded-md py-3 px-8 text-white mb-12">Recent Work</button>
+                    <div class="flex gap-4 items-center">
+                        <i class="material-icons text-white bg-tertiary rounded-full p-2">arrow_downward</i>
+                        <p class="text-tertiary">Scroll down</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex justify-end px-32 z-50">
+                <div class="w-3/5 absolute top-0">
+                    <img src="assets/background/bg-landing-desktop.svg" alt="bg-landing-desktop">
+                </div>
+            </div>
+        </div>
+
+        <section id="about-section" class="w-full bg-primary">
+            <div class="w-full absolute">
+                <div class="flex justify-between relative">
+                    <img class="top-0" src="assets/background/bg-about-line-desktop.svg" alt="bg-about-line-desktop">
+                    <img class="absolute right-0 -top-10 w-1/3" src="assets/background/bg-about-desktop.svg" alt="bg-about-desktop">
+                </div>
+            </div>
+            <div class="flex flex-col gap-32">
+                <div class="p-32 flex items-start w-full">
+                    <div class="w-1/5 z-0">
+                        <img class="w-fit" src="assets/logo/logo.svg" alt="logo">
+                    </div>
+                    <div class="w-4/5 flex flex-col gap-4 z-20">
+                        <div class="flex gap-4 items-center font-medium">
+                            <p class="text-gray">01</p>
+                            <p class="text-white">Who We Are</p>
+                        </div>
+                        <p class="font-bold text-white text-8xl">We Make Designs that Lead and Inpire.</p>
+                    </div>
+                </div>
+
+                <div class="px-32 w-full flex items-center">
+                    <div class="w-1/5">
+                        <div class="tab-container flex flex-col gap-14">
+                            <div class="w-full flex gap-8 items-center font-medium">
+                                <div class="w-1/12 bg-white h-1"></div>
+                                <div id="defaultOpen" onclick="openTab(event, '2018', 'c-2018')" class="tab-nav w-11/12 text-gray flex items-center gap-4 cursor-pointer hover:text-white">
+                                    <p>2018</p>
+                                    <div class="nav-line w-3/4 flex text-white items-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        <hr class="border-white w-3/4">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full flex gap-8 items-center font-medium">
+                                <div class="w-1/12 bg-white h-1"></div>
+                                <div onclick="openTab(event, '2019', 'c-2019')" class="tab-nav w-11/12 text-gray flex items-center gap-4 cursor-pointer hover:text-white">
+                                    <p>2019</p>
+                                    <div class="nav-line w-3/4 flex text-white items-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        <hr class="border-white w-3/4">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full flex gap-8 items-center font-medium">
+                                <div class="w-1/12 bg-white h-1"></div>
+                                <div onclick="openTab(event, '2020', 'c-2020')" class="tab-nav w-11/12 text-gray flex items-center gap-4 cursor-pointer hover:text-white">
+                                    <p>2020</p>
+                                    <div class="nav-line w-3/4 flex text-white items-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        <hr class="border-white w-3/4">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full flex gap-8 items-center font-medium">
+                                <div class="w-1/12 bg-white h-1"></div>
+                                <div onclick="openTab(event, '2021', 'c-2021')" class="tab-nav w-11/12 text-gray flex items-center gap-4 cursor-pointer hover:text-white">
+                                    <p>2021</p>
+                                    <div class="nav-line w-3/4 flex text-white items-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        <hr class="border-white w-3/4">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full flex gap-8 items-center font-medium">
+                                <div class="w-1/12 bg-white h-1"></div>
+                                <div onclick="openTab(event, '2022', 'c-2022')" class="tab-nav w-11/12 text-gray flex items-center gap-4 cursor-pointer hover:text-white">
+                                    <p>2022</p>
+                                    <div class="nav-line w-3/4 flex text-white items-center">
+                                        <div class="w-2 h-2 bg-white rounded-full"></div>
+                                        <hr class="border-white w-3/4">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-4/5">
+                        <div id="2018" class="tab-content">
+                            <img src="assets/background/content1-about-desktop.svg" alt="content1-about-desktop">                            
+                        </div>
+                        <div id="2019" class="tab-content">
+                            <img src="assets/background/content2-about-desktop.svg" alt="content2-about-desktop">                            
+                        </div>
+                        <div id="2020" class="tab-content">
+                            <img src="assets/background/content3-about-desktop.svg" alt="content3-about-desktop">                            
+                        </div>
+                        <div id="2021" class="tab-content">
+                            <img src="assets/background/content4-about-desktop.svg" alt="content4-about-desktop">                            
+                        </div>
+                        <div id="2022" class="tab-content">
+                            <img src="assets/background/content5-about-desktop.svg" alt="content5-about-desktop">                            
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="px-32 pb-32 w-full flex items-start">
+                    <div class="w-1/5">
+                        <div class="w-2 h-32 bg-gray"></div>
+                    </div>
+                    <div id="c-2018" class="tab-content w-4/5">
+                        <div class="flex w-full">
+                            <div class="flex flex-col gap-8 font-medium w-1/2">
+                                <p class="text-4xl text-white font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing 2018.</p>
+                                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.</p>
+                                <button class="bg-secondary w-fit rounded-md py-3 px-8 text-white">Contact Us</button>
+                            </div>
+                            <div class="w-1/2 flex justify-center">
+                                <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                    <p class="font-bold text-10xl">28</p>
+                                    <p class="font-medium">Loren Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c-2019" class="tab-content w-4/5">
+                        <div class="flex w-full">
+                            <div class="flex flex-col gap-8 font-medium w-1/2">
+                                <p class="text-4xl text-white font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing 2019.</p>
+                                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.</p>
+                                <button class="bg-secondary w-fit rounded-md py-3 px-8 text-white">Contact Us</button>
+                            </div>
+                            <div class="w-1/2 flex justify-center">
+                                <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                    <p class="font-bold text-10xl">29</p>
+                                    <p class="font-medium">Loren Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c-2020" class="tab-content w-4/5">
+                        <div class="flex w-full">
+                            <div class="flex flex-col gap-8 font-medium w-1/2">
+                                <p class="text-4xl text-white font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing 2020.</p>
+                                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.</p>
+                                <button class="bg-secondary w-fit rounded-md py-3 px-8 text-white">Contact Us</button>
+                            </div>
+                            <div class="w-1/2 flex justify-center">
+                                <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                    <p class="font-bold text-10xl">30</p>
+                                    <p class="font-medium">Loren Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c-2021" class="tab-content w-4/5">
+                        <div class="flex w-full">
+                            <div class="flex flex-col gap-8 font-medium w-1/2">
+                                <p class="text-4xl text-white font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing 2021.</p>
+                                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.</p>
+                                <button class="bg-secondary w-fit rounded-md py-3 px-8 text-white">Contact Us</button>
+                            </div>
+                            <div class="w-1/2 flex justify-center">
+                                <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                    <p class="font-bold text-10xl">31</p>
+                                    <p class="font-medium">Loren Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c-2022" class="tab-content w-4/5">
+                        <div class="flex w-full">
+                            <div class="flex flex-col gap-8 font-medium w-1/2">
+                                <p class="text-4xl text-white font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing 2022.</p>
+                                <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porta sodales leo vitae vestibulum. Nullam vel posuere nisi. Donec in lobortis arcu.</p>
+                                <button class="bg-secondary w-fit rounded-md py-3 px-8 text-white">Contact Us</button>
+                            </div>
+                            <div class="w-1/2 flex justify-center">
+                                <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                    <p class="font-bold text-10xl">32</p>
+                                    <p class="font-medium">Loren Ipsum</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works-section">            
+            <div class="relative">
+                <img class="absolute top-full right-0" src="assets/background/bg-works-line2-desktop.svg" alt="bg-works-line2-desktop">
+            </div>
+            <div class="flex flex-col gap-32">                                    
+                <div class="px-32 flex items-start w-full">
+                    <div class="w-1/5 z-0">
+                        <img class="w-fit" src="assets/logo/logo.svg" alt="logo">
+                    </div>
+                    <div class="w-4/5 flex flex-col gap-12 z-20">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex gap-4 items-center font-medium text-secondary">
+                                <p>02</p>
+                                <p>You may also like</p>
+                            </div>
+                            <div>
+                                <p class="mb-12 font-bold text-primary text-8xl">Recent Works</p>
+                                <p class="text-gray w-1/2">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex w-full">
+                            <div class="w-fit">
+                                <div>
+                                    <div class="relative w-fit mb-12">
+                                        <p class="bg-tertiary text-white px-6 py-2 -left-5 rounded-xl font-medium absolute top-10">Featured Product</p>
+                                        <img class="w-4/5" src="assets/background/content1-works-desktop.svg" alt="content1-works-desktop">
+                                        <i style="border: #232340 solid 2px;" class="material-icons bg-transparent rounded-full text-primary right-10 absolute bottom-10 p-2">arrow_forward</i>
+                                    </div>
+                                    <div class="w-3/4">
+                                        <p class="font-bold text-primary text-4xl mb-4">Bento 3D Illustration</p>
+                                        <p class="text-gray">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-fit">
+                                <div>
+                                    <div class="relative w-fit mb-12">
+                                        <img class="w-4/5" src="assets/background/content2-works-desktop.svg" alt="content2-works-desktop">
+                                        <i style="border: #232340 solid 2px;" class="material-icons bg-transparent rounded-full text-primary right-10 absolute bottom-10 p-2">arrow_forward</i>
+                                    </div>
+                                    <div class="w-3/4">
+                                        <p class="font-bold text-primary text-4xl mb-4">Bento Vol. 3</p>
+                                        <p class="text-gray">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="absolute bottom-0 left-0" src="assets/background/bg-works-line1-desktop.svg" alt="bg-works-line1-desktop">
+                </div>
+            </div>
+        </section>
+
+        <section id="services-section" class="w-full bg-primary">
+            <div class="w-full absolute">
+                <div class="flex justify-between relative">
+                    <img class="top-0 z-0" src="assets/background/bg-about-line-desktop.svg" alt="bg-about-line-desktop">
+                    <img class="absolute right-0 -top-10 w-1/3" src="assets/background/bg-about-desktop.svg" alt="bg-about-desktop">
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="p-32 flex items-start w-full">
+                    <div class="w-1/5 z-0">
+                        <img class="w-fit" src="assets/logo/logo.svg" alt="logo">
+                    </div>
+                    <div class="w-4/5 z-20 flex flex-col gap-32">
+                        <div class=" flex flex-col gap-4">
+                            <div class="flex gap-4 items-center font-medium">
+                                <p class="text-gray">03</p>
+                                <p class="text-white">Folio Agency</p>
+                            </div>
+                            <p class="font-bold text-white text-8xl">By the Numbers.</p>
+                        </div>
+                        <div class="w-3/4 flex gap-8">
+                            <div class="w-1/2 flex flex-col gap-8 relative top-32">
+                                <div class="text-white">
+                                    <p class="text-10xl font-bold mb-4">20</p>
+                                    <p class="text-xl font-medium">Pre-build Scenes 🔥</p>
+                                </div>
+                                <hr class="border-gray">
+                                <div>
+                                    <p class="text-gray">Bento is the first fully editable, 3D visual design system with global auto-updatable style guides built right in Figma.</p>
+                                </div>
+                                <div class="flex gap-4 items-center text-white">
+                                    <i class="material-icons bg-secondary rounded-full p-2">arrow_downward</i>
+                                    <p>Download</p>
+                                </div>
+                            </div>
+                            <div class="w-1/2 flex flex-col gap-8">
+                                <div class="text-white">
+                                    <div class="font-bold mb-4 flex items-start">
+                                        <p class="text-10xl">40</p><p class="text-5xl">+</span>
+                                    </div>
+                                    <p class="text-xl font-medium">Scenes Objects</p>
+                                </div>
+                                <hr class="border-gray">
+                                <div>
+                                    <p class="text-gray">Bento is the first fully editable, 3D visual design system with global auto-updatable style guides built right in Figma.</p>
+                                </div>
+                                <div class="flex gap-4 items-center text-white">
+                                    <i class="material-icons bg-secondary rounded-full p-2">arrow_downward</i>
+                                    <p>Download</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" flex gap-12 justify-center items-center text-white relative top-32 scroll-smooth">
+                    <i id="slide-arrow-prev" class="slide-arrow material-icons cursor-pointer bg-secondary rounded-full p-2">arrow_back</i>
+                    <div class="flex overflow-hidden" id="slides-container">
+                        <img class="slide" src="assets/background/content-services-desktop.png" alt="content-services-desktop">
+                        <img class="slide" src="assets/background/content1-about-desktop.svg" alt="content-services-desktop">
+                        <img class="slide" src="assets/background/content2-about-desktop.svg" alt="content-services-desktop">
+                        <img class="slide" src="assets/background/content3-about-desktop.svg" alt="content-services-desktop">                        
+                    </div>
+                    <i id="slide-arrow-next" class="slide-arrow material-icons cursor-pointer bg-secondary rounded-full p-2">arrow_forward</i>
+                </div>
+            </div>
+        </section>
+
+        <section id="jobs-section">     
+            <div class="relative">
+                <img class="absolute top-20 left-1/4" src="assets/background/bg-jobs-line-desktop.svg" alt="bg-jobs-line-desktop">
+            </div>
+            <div class="flex flex-col gap-32 py-32">                                                    
+                <div class="px-32 flex items-start w-full">
+                    <div class="w-1/12 z-0">
+                        <img class="w-fit" src="assets/logo/logo.svg" alt="logo">
+                    </div>
+                    <div class="w-11/12 flex gap-12 z-20">
+                        <div class="w-1/2 flex flex-col gap-4">
+                            <div class="flex gap-4 items-center font-medium text-secondary">
+                                <p>04</p>
+                                <p>We are hiring</p>
+                            </div>
+                            <div>
+                                <p class="mb-12 font-bold text-primary text-8xl">Jobs</p>
+                                <p class="text-gray w-1/2">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-8">
+                                <i class="material-icons text-white bg-tertiary rounded-full p-2">arrow_downward</i>
+                                <div class="text-gray font-medium">
+                                    <p>Available</p>
+                                    <p>jobs</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="w-1/2 flex flex-col gap-4">
+                            <div class="card bg-white hover:text-white rounded-xl p-12 shadow-md text-primary w-full flex items-center gap-2">
+                                <div class="w-4/5">
+                                    <div class="flex items-center gap-4 font-bold">
+                                        <p class="text-4xl">Graphic Designer</p>
+                                        <p class="text-xl notif-card relative top-1 text-white rounded-full gradient-blue flex justify-center w-8 h-8 bg-secondary">2</p>
+                                    </div>
+                                    <p class="text-gray mt-2 mb-4">2 years experience</p>
+                                    <i class="material-icons font-medium">arrow_forward</i>
+                                </div>
+                                <div class="w-1/5 hidden img-card">
+                                    <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                                </div>
+                            </div>
+                            <div class="card bg-white hover:text-white rounded-xl p-12 shadow-md text-primary w-full flex items-center gap-2">
+                                <div class="w-4/5">
+                                    <div class="flex items-center gap-4 font-bold">
+                                        <p class="text-4xl">Visual Designer</p>
+                                    </div>
+                                    <p class="text-gray mt-2 mb-4">2 years experience</p>
+                                    <i class="material-icons font-medium">arrow_forward</i>
+                                </div>
+                                <div class="w-1/5 hidden img-card">
+                                    <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                                </div>
+                            </div>
+                            <div class="card bg-white hover:text-white rounded-xl p-12 shadow-md text-primary w-full flex items-center gap-2">
+                                <div class="w-4/5">
+                                    <div class="flex items-center gap-4 font-bold">
+                                        <p class="text-4xl">Art Director</p>
+                                    </div>
+                                    <p class="text-gray mt-2 mb-4">2 years experience</p>
+                                    <i class="material-icons font-medium">arrow_forward</i>
+                                </div>
+                                <div class="w-1/5 hidden img-card">
+                                    <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                                </div>
+                            </div>
+                            <div class="card bg-white hover:text-white rounded-xl p-12 shadow-md text-primary w-full flex items-center gap-2">
+                                <div class="w-4/5">
+                                    <div class="flex items-center gap-4 font-bold">
+                                        <p class="text-4xl">Web Designer</p>
+                                        <p class="text-xl notif-card relative top-1 text-white rounded-full gradient-blue flex justify-center w-8 h-8 bg-secondary">6</p>
+                                    </div>
+                                    <p class="text-gray mt-2 mb-4">2 years experience</p>
+                                    <i class="material-icons font-medium">arrow_forward</i>
+                                </div>
+                                <div class="w-1/5 hidden img-card">
+                                    <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section" class="w-full flex justify-center">
+            <div class="bg-secondary rounded-xl w-11/12">
+                <div class="w-full flex justify-center py-32">
+                    <div class="flex flex-col gap-8 items-center text-white w-1/2">
+                        <img src="assets/logo/logo-second.svg" alt="logo-second">
+                        <p class="font-medium">👋 Say Hello</p>
+                        <p class="font-bold text-3xl text-center">A design team building a curated marketplace for UI designers.</p>
+                    </div>
+                </div>
+                <div class="w-full flex">
+                    <div class="w-1/2 border border-white border-opacity-20 flex justify-center">
+                        <p class="font-bold text-6xl w-1/2 py-32 text-white">Let’s talk about your next project</p>
+                    </div>
+                    <div class="w-1/2 border border-white border-opacity-20 flex justify-center">
+                        <div class="flex flex-col gap-8 py-32">
+                            <div>
+                                <img src="assets/icon/chat-bubble.svg" alt="chat-bubble">
+                            </div>
+                            <div class="flex items-start w-full gap-8">
+                                <p class="w-3/4 font-bold text-3xl text-left text-white">Invest in your designs today!</p>
+                                <div class="w-1/4">
+                                    <i style="border: white solid 2px;" class=" material-icons bg-transparent rounded-full text-white p-2">arrow_forward</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="credits" class="w-full flex items-center">
+            <div class="flex flex-col gap-6 items-center w-full">
+                <img src="assets/logo/full-logo.svg" class="w-2/12" alt="full-logo">
+                <p class="text-gray w-5/12 text-center">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                <nav class="flex items-center text-gray gap-12 text-base font-medium">                    
+                    <a class="hover:text-secondary cursor-pointer" href="#about-section">About</a>
+                    <a class="hover:text-secondary cursor-pointer" href="#works-section">Work</a>
+                    <a class="hover:text-secondary cursor-pointer" href="#services-section">Services</a>
+                    <a class="hover:text-secondary cursor-pointer" href="#jobs-section">Jobs</a>                    
+                </nav>
+            </div>
+        </div>
+
+        <footer class="w-full flex justify-center font-medium">
+            <div style="border-top: solid rgb(227, 227, 227) 1px; color: #ADADAD;" class="w-11/12 flex justify-between items-center py-8">
+                <p class="text-gray">© 2020, UI8 LLC.</p>
+                <div class="flex items-center gap-8">
+                    <p class="text-secondary">Follow Us</p>
+                    <i style="font-size:24px" class="cursor-pointer fa rounded-full">&#xf230;</i>
+                    <i style="font-size:24px" class="cursor-pointer fa rounded-full">&#xf16a;</i>
+                    <i style="font-size:24px" class="cursor-pointer fa rounded-full">&#xf16d;</i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="md:hidden flex flex-col gap-32 mt-32">
+        <section id="landing-mobile-section">
+            <div class="absolute right-0 top-0 z-0">
+                <img src="assets/mobile/bg-landing-mobile.svg" alt="bg-landing-mobile">
+            </div>
+            <div class="px-12 z-20">
+                <div class="flex flex-col gap-8">
+                    <p class="font-bold text-6xl w-3/4">Stand Out from The Crowd</p>
+                    <p class="text-gray">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                    <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Recent Work</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-mobile-section" class="bg-primary w-full mt-52">
+            <div class="flex flex-col gap-8 p-12 z-20 w-full">
+                <div class="flex gap-16 items-center font-medium">
+                    <p class="text-gray">01</p>
+                    <p class="text-white">Who We Are</p>
+                </div>
+                <p class="text-6xl font-bold text-white">We Make Designs that Lead and Inpire.</p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items center gap-8">
+                        <i class="material-icons text-white bg-secondary rounded-full p-4">arrow_back</i>
+                        <i class="material-icons text-white bg-secondary rounded-full p-4">arrow_forward</i>
+                    </div>
+                    <select id="select-tab" class="bg-primary text-white pr-4" onchange="selectTab(value)">
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+                <div id="m2018" class="mtab-content block">
+                    <div class="flex flex-col gap-16">
+                        <div class="w-full">
+                            <img src="assets/background/content1-about-desktop.svg" alt="content1-about-desktop">
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <p class="text-white font-medium text-4xl">A design team building a curated marketplace for UI designers.</p>
+                            <p class="text-gray">4,404 curated design resources to energize your creative workflow. We're a growing family of 334,531 designers and makers from around the world</p>
+                            <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>  
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                <p class="font-bold text-10xl">28</p>
+                                <p class="font-medium">Loren Ipsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m2019" class="mtab-content">
+                    <div class="flex flex-col gap-16">
+                        <div class="w-full">
+                            <img src="assets/background/content2-about-desktop.svg" alt="content2-about-desktop">
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <p class="text-white font-medium text-4xl">A design team building a curated marketplace for UI designers.</p>
+                            <p class="text-gray">4,404 curated design resources to energize your creative workflow. We're a growing family of 334,531 designers and makers from around the world</p>
+                            <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>  
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                <p class="font-bold text-10xl">29</p>
+                                <p class="font-medium">Loren Ipsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m2020" class="mtab-content">
+                    <div class="flex flex-col gap-16">
+                        <div class="w-full">
+                            <img src="assets/background/content3-about-desktop.svg" alt="content3-about-desktop">
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <p class="text-white font-medium text-4xl">A design team building a curated marketplace for UI designers.</p>
+                            <p class="text-gray">4,404 curated design resources to energize your creative workflow. We're a growing family of 334,531 designers and makers from around the world</p>
+                            <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>  
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                <p class="font-bold text-10xl">30</p>
+                                <p class="font-medium">Loren Ipsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m2021" class="mtab-content">
+                    <div class="flex flex-col gap-16">
+                        <div class="w-full">
+                            <img src="assets/background/content4-about-desktop.svg" alt="content4-about-desktop">
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <p class="text-white font-medium text-4xl">A design team building a curated marketplace for UI designers.</p>
+                            <p class="text-gray">4,404 curated design resources to energize your creative workflow. We're a growing family of 334,531 designers and makers from around the world</p>
+                            <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>  
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                <p class="font-bold text-10xl">31</p>
+                                <p class="font-medium">Loren Ipsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="m2022" class="mtab-content">
+                    <div class="flex flex-col gap-16">
+                        <div class="w-full">
+                            <img src="assets/background/content5-about-desktop.svg" alt="content5-about-desktop">
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <p class="text-white font-medium text-4xl">A design team building a curated marketplace for UI designers.</p>
+                            <p class="text-gray">4,404 curated design resources to energize your creative workflow. We're a growing family of 334,531 designers and makers from around the world</p>
+                            <button class="w-1/2 font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>  
+                        </div>
+                        <div class="w-full flex justify-center">
+                            <div class="rounded-full shadow-2xl text-white w-fit p-14 flex flex-col items-center">
+                                <p class="font-bold text-10xl">32</p>
+                                <p class="font-medium">Loren Ipsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works-mobile-section" class="bg-white w-full">
+            <div class="flex flex-col gap-8 p-12 z-20 w-full">
+                <div class="flex gap-16 items-center font-medium text-secondary">
+                    <p>02</p>
+                    <p>You may also like</p>
+                </div>
+                <p class="text-6xl font-bold text-primary">Recent Work.</p>
+                <p class="text-gray">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                <img src="assets/background/content1-works-desktop.svg" alt="content1-works-desktop">
+
+                <p class="text-4xl font-bold text-primary">Bento 3D Illustration</p>
+                <p class="text-gray w-3/4">Agency is a full-service agency, busy designing and building beautiful digital products, brands.</p>
+                <i style="border: #232340 solid 2px;" class="material-icons bg-transparent rounded-full text-primary p-2 w-fit">arrow_forward</i>
+
+                <img src="assets/background/content2-works-desktop.svg" alt="content2-works-desktop">
+                <p class="text-4xl font-bold text-primary">Bento 3D Illustration</p>
+                <p class="text-gray w-3/4">Agency is a full-service agency, busy designing and building beautiful digital products, brands.</p>
+                <i style="border: #232340 solid 2px;" class="material-icons bg-transparent rounded-full text-primary p-2 w-fit">arrow_forward</i>
+
+                <button class="w-full font-medium bg-secondary rounded-md py-5 px-8 text-white">Contact Us</button>
+            </div>
+        </section>
+
+        <section id="services-mobile-section" class="bg-primary">
+            <div class="relative">
+                <img class="absolute right-0" src="assets/mobile/line-services-mobile.svg" alt="line-services-mobile">
+            </div>
+            <div class="flex flex-col gap-8 p-12 z-20 w-full">
+                <div class="flex gap-16 items-center font-medium">
+                    <p class="text-gray">03</p>
+                    <p class="text-white">Folio Agency</p>                    
+                </div>
+                <p class="text-white text-6xl font-bold">By the Numbers</p>
+                <div class="font-bold text-white">
+                    <div class="flex items-start mb-6">
+                        <p class="text-9xl">40</p>
+                        <p class="text-4xl">+</p>
+                    </div>
+                    <p class="font-medium">Scene Objects</p>
+                    <div class="py-8">
+                        <hr class="border-gray bg-gray">
+                    </div>
+                    <p class="text-gray font-normal mb-6">Bento is the first fully editable, 3D visual design system with global auto-updatable style guides built right in Figma.</p>
+                    <div class="flex gap-4 items-center text-white">
+                        <i class="material-icons bg-secondary rounded-full p-2">arrow_downward</i>
+                        <p>Download</p>
+                    </div>
+                </div>
+                <div class="font-bold text-white">
+                    <div class="flex items-start mb-6">
+                        <p class="text-9xl">20</p>
+                    </div>
+                    <p class="font-medium">Pre-build Scenes 🔥</p>
+                    <div class="py-8">
+                        <hr class="border-gray bg-gray">
+                    </div>
+                    <p class="text-gray font-normal mb-6">Bento is the first fully editable, 3D visual design system with global auto-updatable style guides built right in Figma.</p>
+                    <div class="flex items center gap-8 py-8">
+                        <i id="slide-arrow-prev" class="slide-arrow material-icons text-white bg-secondary rounded-full p-4">arrow_back</i>
+                        <i id="slide-arrow-next" class="slide-arrow material-icons text-white bg-secondary rounded-full p-4">arrow_forward</i>
+                    </div>
+                    <div class="scroll-smooth">
+                        <div id="slides-container" class="flex overflow-hidden">
+                            <img class="slide" src="assets/background/content-services-desktop.png" alt="content-services-desktop">
+                            <img class="slide" src="assets/background/content1-about-desktop.svg" alt="content-services-desktop">
+                            <img class="slide" src="assets/background/content2-about-desktop.svg" alt="content-services-desktop">
+                            <img class="slide" src="assets/background/content3-about-desktop.svg" alt="content-services-desktop">     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jobs-mobile-section" class="bg-white w-full">
+            <div class="relative">
+                <img class="absolute -top-32 right-0" src="assets/mobile/line-jobs-mobile.svg" alt="line-jobs-mobile">
+            </div>
+            <div class="flex flex-col gap-8 p-12 w-full">
+                <div class="flex gap-16 items-center font-medium text-secondary">
+                    <p>04</p>
+                    <p>We are hiring</p>
+                </div>
+                <p class="text-6xl text-primary font-bold">Jobs</p>
+                <p class="text-gray w-3/4">Agency is a full-service agency, busy designing and building beautiful digital products, brands, and experiences.</p>
+                <div class="w-full flex flex-col gap-4 justify-center">
+                    <div class="card bg-white hover:text-white rounded-xl p-8 shadow-md text-primary w-full flex items-center gap-2">
+                        <div class="w-11/12">
+                            <div class="flex items-center gap-4 font-bold">
+                                <p class="text-3xl">Graphic Designer</p>
+                                <p class="text-xl notif-card relative top-1 text-white rounded-full gradient-blue flex justify-center w-8 h-8 bg-secondary">2</p>
+                            </div>
+                            <p class="text-gray mt-2 mb-4">2 years experience</p>
+                            <i class="material-icons font-medium">arrow_forward</i>
+                        </div>
+                        <div class="w-1/5 hidden img-card">
+                            <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                        </div>
+                    </div>
+                    <div class="card bg-white hover:text-white rounded-xl p-8 shadow-md text-primary w-full flex items-center gap-2">
+                        <div class="w-4/5">
+                            <div class="flex items-center gap-4 font-bold">
+                                <p class="text-3xl">Visual Designer</p>
+                            </div>
+                            <p class="text-gray mt-2 mb-4">2 years experience</p>
+                            <i class="material-icons font-medium">arrow_forward</i>
+                        </div>
+                        <div class="w-1/5 hidden img-card">
+                            <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                        </div>
+                    </div>
+                    <div class="card bg-white hover:text-white rounded-xl p-8 shadow-md text-primary w-full flex items-center gap-2">
+                        <div class="w-4/5">
+                            <div class="flex items-center gap-4 font-bold">
+                                <p class="text-3xl">Art Director</p>
+                            </div>
+                            <p class="text-gray mt-2 mb-4">2 years experience</p>
+                            <i class="material-icons font-medium">arrow_forward</i>
+                        </div>
+                        <div class="w-1/5 hidden img-card">
+                            <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                        </div>
+                    </div>
+                    <div class="card bg-white hover:text-white rounded-xl p-8 shadow-md text-primary w-full flex items-center gap-2">
+                        <div class="w-4/5">
+                            <div class="flex items-center gap-4 font-bold">
+                                <p class="text-3xl">Web Designer</p>
+                                <p class="text-xl notif-card relative top-1 text-white rounded-full gradient-blue flex justify-center w-8 h-8 bg-secondary">6</p>
+                            </div>
+                            <p class="text-gray mt-2 mb-4">2 years experience</p>
+                            <i class="material-icons font-medium">arrow_forward</i>
+                        </div>
+                        <div class="w-1/5 hidden img-card">
+                            <img src="assets/background/content-jobs-desktop.svg" alt="content-jobs-desktop">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <div id="credits-mobile" class="flex flex-col items-center w-full">
+            <div class="py-8 w-4/5 bg-secondary rounded-xl">
+                <div class="relative">
+                    <img class="absolute -top-5 z-10" src="assets/mobile/line-credits-mobile.svg" alt="line-credits-mobile">
+                </div>
+                <div class="z-20">
+                    <div class="flex flex-col items-center w-full text-white font-medium gap-12 p-12">
+                        <img src="assets/icon/chat-bubble.svg" alt="chat-bubble">
+                        <p>👋 Say hello</p>
+                        <p class="text-2xl text-center">A design team building a curated marketplace for UI designers.</p>
+                    </div>
+                </div>
+                <hr class="z-20">
+                <div class="text-white border-t border-white border-opacity-20 pt-12 px-8 z-20">
+                    <p class="mb-8 font-bold text-4xl text-center">Let’s talk about your next project</p>
+                    <button class="w-full font-medium bg-white rounded-md py-5 px-8 text-secondary">Contact Us</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pb-20 w-full flex flex-col items-center gap-8">
+            <img src="assets/logo/full-logo.svg" alt="full-logo">
+            <p class="text-gray text-center w-3/4">Agency is a full-service agency, busy designing and building.</p>
+            <select class="bg-transparent text-primary w-4/5 font-medium border rounded-md p-4">
+                <option value="2022">2022</option>
+                <option value="2022">2021</option>
+                <option value="2022">2020</option>
+                <option value="2022">2019</option>
+                <option value="2022">2018</option>
+            </select>
+            <div class="flex items-center gap-8">                
+                <i style="font-size:24px" class="border p-3 text-gray cursor-pointer fa rounded-full">&#xf230;</i>
+                <i style="font-size:24px" class="border p-3 text-gray cursor-pointer fa rounded-full">&#xf16a;</i>
+                <i style="font-size:24px" class="border p-3 text-gray cursor-pointer fa rounded-full">&#xf16d;</i>
+            </div>
+            <p class="font-medium text-gray">© 2020, UI8 LLC.</p>
+            <div class="absolute left-0">
+                <img src="assets/mobile/line-footer-mobile.svg" alt="line-footer-mobile">
+            </div>
+        </footer>
+    </div>
+
+    <script defer src="index.js"></script>    
+</body>
+</html>
